@@ -11,20 +11,21 @@ var influencer={
         [influ.name,influ.mobile,influ.email,influ.uname,influ.password],callback);
     },
 
-    addextrainfluinfo:function(influ,callback){
-        return db.query('insert into influencer (profilePic,birthDate,gender,field1,field2,field3,fees,bio,profession) values(?,?,?,?,?,?,?,?,?)',
-        [influ.profilePic,influ.birthDate,influ.gender,influ.field1,influ.field2,influ.field3,influ.fees,influ.bio,influ.profession],callback);
-    },
+   
 
     viewinflu:function(id,callback){
         return db.query('select * from influencer where influId=?',
         [id],callback);
     },
 
-    editinflu:function(influ,id,callback){
-        return db.query('update influencer set name=?,mobile=?,email=?,uname=?,password=?,proilePic=?,birthDate=?,gender=?,field1=?,field2=?,field3=?,fees=?,bio=?,profession=? where influId=?',
-        [influ.name,influ.mobile,influ.email,influ.uname,influ.password,influ.profilePic,influ.birthDate,influ.gender,influ.field1,influ.field2,influ.field3,influ.fees,influ.bio,influ.profession,id],callback);
-    }
+    updateinflubyemail:function(influ,id,callback){
+        return db.query('update influencer set name=?,profilePic=?,birthDate=?,gender=?,mobile=?,uname=?,password=?,field1=?,field2=?,field3=?,fbLink=?,instaLink=?,twitterLink=?,fbReach=?,instaReach=?,twitterReach=?,fees=?,bio=?,profession=? where email=?',
+        [influ.name,influ.profilePic,influ.birthDate,influ.gender,influ.mobile,influ.uname,influ.password,influ.field1,influ.field2,influ.field3,influ.fbLink,influ.instaLink,influ.twitterLink,influ.fbReach,influ.instaReach,influ.twitterReach,influ.fees,influ.bio,influ.profession,id],callback);
+    },
+    updateinfluimg:function(item,filename,callback){
+        return db.query('update influencer set name=?,profilePic=?,birthDate=?,gender=?,mobile=?,uname=?,password=?,field1=?,field2=?,field3=?,fbLink=?,instaLink=?,twitterLink=?,fbReach=?,instaReach=?,twitterReach=?,fees=?,bio=?,profession=? where email=?',
+        [influ.name,filename,influ.birthDate,influ.gender,influ.mobile,influ.uname,influ.password,influ.field1,influ.field2,influ.field3,influ.fbLink,influ.instaLink,influ.twitterLink,influ.fbReach,influ.instaReach,influ.twitterReach,influ.fees,influ.bio,influ.profession,id],callback);
+    },
 }
 
 module.exports=influencer;

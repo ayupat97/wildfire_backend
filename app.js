@@ -11,12 +11,17 @@ var loginInflu=require('./routes/loginInflu_routes');
 var loginBrand=require('./routes/loginBrand_routes');
 var signupInflu=require('./routes/singupInflu_routes');
 var signupBrand=require('./routes/signupBrand_routes');
-var firstloginBrand=require('./routes/firstloginBrand');
-var firstloginInflu=require('./routes/firstloginInflu');
+
 var viewInflu=require('./routes/viewinflu_routes');
 var viewBrand=require('./routes/viewbrand_routes');
 var editBrand=require('./routes/editBrand_routes');
 var editInflu=require('./routes/editInflu_routes');
+var editinfluimg=require('./routes/edit_influ_img');
+
+var colabadd=require('./routes/colab_add_routes');
+var colabget=require('./routes/colab_get_routes');
+var colabupdate=require('./routes/colab_update_routes');
+var colabdel=require('./routes/colab_del_routes');
 
 var loginAdmin=require('./routes/loginAdmin_routes');
 var getadmin=require('./routes/get_admin_routes');
@@ -55,11 +60,11 @@ app.use('/logininflu',loginInflu);
 app.use('/loginbrand',loginBrand);
 app.use('/signupinflu',signupInflu);
 app.use('/signupbrand',signupBrand);
-app.use('/firstlogininflu',firstloginInflu);
-app.use('/firstloginbrand',firstloginBrand);
+
 app.use('/viewprofileinflu',viewInflu);
 app.use('/veiwprofilebrand',viewBrand);
 app.use('/updateprofileinflu',editInflu);
+app.use('/updateinfluimg',editinfluimg);
 app.use('/updateprofilebrand',editBrand);
 app.use('/viewinfluencer',getinflu);
 app.use('/viewbrand',getbrand);
@@ -80,6 +85,10 @@ app.use('/addfield',addfield);
 app.use('/delfield',delfield);
 app.use('/delmulfield',delmulfield);
 app.use('/updatefield',updatefield);
+app.use('/addcolab',colabadd);
+app.use('/updatecolab',colabupdate);
+app.use('/viewcolab',colabget);
+app.use('/delcolab',colabdel);
 
 app.use('/users', usersRouter);
 

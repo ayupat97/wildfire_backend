@@ -3,7 +3,7 @@ var express = require("express");
 var router = express.Router();
 
 router.put("/:id", function(req, res, next) {
-    editInflu.editinflu(req.body,req.params.id, function(err, rows) {
+    editInflu.updateinflubyemail(req.body,req.params.id, function(err, rows) {
       if (err) 
       {
         res.json(err);
