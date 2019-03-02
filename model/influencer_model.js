@@ -13,7 +13,7 @@ var influencer={
 
    
 
-    viewinflu:function(id,callback){
+    viewinflubyid:function(id,callback){
         return db.query('select * from influencer where influId=?',
         [id],callback);
     },

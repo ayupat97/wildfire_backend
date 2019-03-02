@@ -3,7 +3,7 @@ var express = require("express");
 var router = express.Router();
 
 router.get('/:id',function(req,res,next){
-    viewInflu.viewinflu(req.params.id,function(err,rows){
+    viewInflu.viewinflubyid(req.params.id,function(err,rows){
         if(err)
         {
             res.json(err);
